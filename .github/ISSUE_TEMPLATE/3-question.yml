@@ -1,0 +1,42 @@
+name: ❓ Question
+description: Ask how something works.
+title: "[Question]: "
+labels: ["question"]
+body:
+  - type: checkboxes
+    id: prechecks
+    attributes:
+      label: Before you ask
+      options:
+        - label: I had a look through the Help tab in the app (Settings… → Help)
+          required: true
+
+  - type: textarea
+    id: question
+    attributes:
+      label: What would you like to know?
+    validations:
+      required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Context
+      description: What you're trying to do, and anything you've already tried.
+    validations:
+      required: false
+
+  - type: input
+    id: version
+    attributes:
+      label: PowerMode version
+      placeholder: "1.0.0 (1) · Standard"
+    validations:
+      required: false
+
+  - type: markdown
+    attributes:
+      value: |
+        For anything involving your purchase, your license, or a security issue,
+        please use the [contact page](https://powermode.app/contact) instead — a
+        public issue is the wrong place for it.

@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 🛟 Help, inside the app
+    url: https://powermode.app
+    about: Settings… → Help covers where the light lands, milestones, pausing, and how to export a log.
+  - name: 📖 Changelog & privacy policy
+    url: https://powermode.app/changelog
+    about: What changed in each release, and what PowerMode reads on each key — and what it never does.
+  - name: ✉️ Purchases, licenses & security reports
+    url: https://powermode.app/contact
+    about: Anything involving your license, your payment, or a vulnerability — please don't post it publicly.

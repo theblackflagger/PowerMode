@@ -1,0 +1,63 @@
+name: ✨ Feature request
+description: Something is missing, or could work better.
+title: "[Feature]: "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        PowerMode stays deliberately small — a menu bar app that lights up your
+        typing, not a dashboard. The requests that land are the ones that
+        explain the moment they'd make better, so please spend a line or two on
+        that.
+
+  - type: checkboxes
+    id: prechecks
+    attributes:
+      label: Before you file
+      options:
+        - label: I searched the [existing issues](https://github.com/theblackflagger/PowerMode/issues?q=is%3Aissue) and nobody has asked for this yet
+          required: true
+
+  - type: textarea
+    id: request
+    attributes:
+      label: What would you like PowerMode to do?
+      placeholder: Describe the feature as you'd want to use it.
+    validations:
+      required: true
+
+  - type: textarea
+    id: why
+    attributes:
+      label: What are you doing today instead?
+      description: The workaround you're living with, and where it hurts. This is the part that decides priority.
+      placeholder: |
+        Right now I switch the sky off by hand every time I open…
+    validations:
+      required: true
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Which part of PowerMode does it touch?
+      options:
+        - The burst at the cursor, or a new look
+        - The trail on the last letters
+        - The sky over the screen
+        - Key sounds, or a new sound set
+        - Milestones
+        - Menu bar, menu, or pausing
+        - Settings, the welcome guide, or start at login
+        - An app where the burst should land but doesn't
+        - Something else
+    validations:
+      required: true
+
+  - type: textarea
+    id: extra
+    attributes:
+      label: Anything else?
+      description: Mockups, links, or how another tool solves it.
+    validations:
+      required: false

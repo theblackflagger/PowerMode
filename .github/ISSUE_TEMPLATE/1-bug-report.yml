@@ -1,0 +1,147 @@
+name: 🐞 Bug report
+description: Something in PowerMode is broken or behaving unexpectedly.
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report this. The fields below are the ones
+        that usually decide whether a bug can be fixed in one pass or takes three
+        rounds of questions — please fill in what you can.
+
+  - type: checkboxes
+    id: prechecks
+    attributes:
+      label: Before you file
+      options:
+        - label: I read the Help tab in the app (Settings… → Help) — it covers where the light lands, milestones and pausing
+          required: true
+        - label: I searched the [existing issues](https://github.com/theblackflagger/PowerMode/issues?q=is%3Aissue) and this isn't a duplicate
+          required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: PowerMode version
+      description: Shown in Settings… → About, exactly in this shape.
+      placeholder: "1.0.0 (1) · Standard"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: macos
+    attributes:
+      label: macOS version
+      options:
+        - macOS 27
+        - macOS 26 (Tahoe)
+        - macOS 15 (Sequoia)
+        - macOS 14 (Sonoma)
+        - Other / beta — I'll say which below
+    validations:
+      required: true
+
+  - type: dropdown
+    id: chip
+    attributes:
+      label: Mac
+      options:
+        - Apple silicon
+        - Intel
+    validations:
+      required: true
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Which part of PowerMode?
+      options:
+        - The burst at the cursor
+        - The trail on the last letters
+        - The sky over the screen
+        - Key sounds
+        - Milestones at 10, 25, 50, 100
+        - Menu bar, menu, or pausing
+        - Settings, the welcome guide, or start at login
+        - License or Setapp
+        - Something else
+    validations:
+      required: true
+
+  - type: input
+    id: app
+    attributes:
+      label: Which app were you typing in?
+      description: The app in front when it happened — Notes, Chrome, VS Code, Terminal, …
+      placeholder: "Chrome"
+    validations:
+      required: true
+
+  - type: input
+    id: look
+    attributes:
+      label: Which look, sky and sound set were on?
+      placeholder: "Mixed Confetti · Starfield · Topre"
+    validations:
+      required: false
+
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: What went wrong, and what did you expect instead?
+      placeholder: |
+        Expected: the burst at the cursor as I type.
+        Actual: it lands at the edge of the field, and the trail never shows.
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      description: The smallest sequence that brings the bug back.
+      placeholder: |
+        1. Pick Sparks in the menu bar
+        2. Click into a Google Docs page in Chrome
+        3. Type a few words
+        4. The burst appears at the top-left of the page, not at the cursor
+    validations:
+      required: true
+
+  - type: dropdown
+    id: frequency
+    attributes:
+      label: How often does it happen?
+      options:
+        - Every time
+        - Most of the time
+        - Occasionally
+        - It happened once
+    validations:
+      required: false
+
+  - type: textarea
+    id: diagnostics
+    attributes:
+      label: Diagnostics (optional, but it speeds things up a lot)
+      description: |
+        Reproduce the bug, then open **Settings… → Help → Export…** and attach
+        the exported log here — or paste the relevant lines.
+
+        The export holds the app and macOS versions, your settings as names and
+        flags, the paused apps, the license state (never the key), and the
+        permission states, plus the current launch's log. Logs are redacted at
+        the source: never a key code, a character, or any text you typed.
+      render: text
+    validations:
+      required: false
+
+  - type: input
+    id: source
+    attributes:
+      label: Where did you get PowerMode?
+      placeholder: "powermode.app"
+    validations:
+      required: false
